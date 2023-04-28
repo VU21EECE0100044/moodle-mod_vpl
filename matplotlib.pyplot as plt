@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+h = 6.62607015e-34   # Planck's constant in J.s
+c = 299792458        # Speed of light in m/s
+e = 1.60217662e-19   # Elementary charge in Coulombs
+
+# Wavelength range
+wavelengths = np.linspace(1e-6, 4e-7, 1000)  # From IR to UV
+
+# Calculate energies
+energies = h * c / wavelengths / e
+
+# Plot the graph
+plt.plot(wavelengths*1e9, energies)  # Convert to nm and eV
+plt.xlabel('Wavelength (nm)')
+plt.ylabel('Energy (eV)')
+plt.title('Energy vs. Wavelength')
+plt.show()
